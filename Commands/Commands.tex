@@ -1,0 +1,23 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amssymb}
+
+\newcommand{\plusbinomial} % new command name is "\plusbinomial"
+[3] % number of parameters
+[2] % default value for the first parameter
+{(#2 + #3)^#1} % # use passed parameters and execute the new command
+
+\renewcommand{\S}{\mathbb{S}} % override an existing command "\S"
+ 
+ 
+
+\begin{document}
+
+User-defined commands:
+\[ \plusbinomial{a}{b} \]
+
+\[ \plusbinomial[4]{c}{d} \]
+
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{hyperref} % make sure it is always the last imported package
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=cyan,
+pdftitle={Sharelatex Example}, % next two are PDF specific
+pdfpagemode=FullScreen,
+}
+
+\urlstyle{same} % display links like the rest of the text
+ 
+ 
+ 
+\begin{document}
+ 
+\tableofcontents % will be hyperlinked by default
+ 
+\section{First Chapter}
+ 
+Reference: \href{http://www.sharelatex.com}{Something Linky}
+
+URL: \url{http://www.sharelatex.com}
+
+File: \href{run:./file.txt}{File.txt}
+ 
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{titlesec} % custom sections package
+
+\titleformat{\section} % customise "\section" command
+[display] % shape: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+{\large\scshape\raggedright} % format: large header, small capital letters, left aligned
+{My little label} % label
+{0mm} % sep: horizontal separation of label and title body
+{} % before-code: code to be executed before title body
+[\titlerule] % after-code: code to be executed after title body; create horizontal line
+
+\titlespacing{\section} % customise "\section" command
+{1mm} % left: increases left margin
+{0mm} % before-sep: vertical space before the title
+{0mm} % after-sep: separation between title and non-sectioning text
+
+
+
+\begin{document}
+
+\chapter{Let's begin}
+
+\section{First Attempt}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+enim ad minim veniam, quis nostrud exercitation ullamco laboris...
+
+\section{Second attempt}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+enim ad minim veniam, quis nostrud exercitation ullamco laboris...
+
+\end{document}
