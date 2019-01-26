@@ -1,0 +1,130 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+%\usepackage[T1]{fontenc}
+%\usepackage{helvet}
+
+\usepackage{geometry}
+\geometry{
+margin=15mm
+}
+
+\usepackage{multicol}
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+[block]
+{\large
+\scshape
+\raggedright}
+{}
+{0mm}
+{}
+[\titlerule]
+
+\titlespacing{\section}
+{0mm}
+{0mm}
+{2mm}
+
+\titleformat{\subsection}
+[block]
+{\large
+\raggedright}
+{}
+{0mm}
+{}
+
+\titlespacing{\subsection}
+{0mm}
+{0mm}
+{1mm}
+
+\titleformat{\subsubsection}
+[block]
+{\large
+\raggedright}
+{}
+{0mm}
+{}
+
+\titlespacing{\subsubsection}
+{0mm}
+{0mm}
+{1mm}
+
+\usepackage{hyperref}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,      
+urlcolor=blue,
+pdftitle={Name Surname CV},
+pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+%\renewcommand{\hfill}{\texorpdfstring{\hfill}{}}
+
+
+
+\begin{document}
+
+\begin{multicols}{2}
+
+\noindent
+\begin{minipage}{.49\textwidth}
+\raggedright
+
+{\huge Name Surname}
+
+City, Country
+\end{minipage}
+
+\noindent
+\begin{minipage}{.49\textwidth}
+\raggedleft
+
+\href{mailto:name.surname@email.com}{name.surname@email.com}
+
+\href{https://linkedin.com/in/name-surname}{linkedin.com/name-surname}
+
+\href{https://github.com/NameSurname}{github.com/NameSurname}
+\end{minipage}
+
+\end{multicols}
+
+
+
+\section{Work experience}
+\subsection{Job title, Company \texorpdfstring{\hfill}{} Date, Length}
+Lay out what you know.
+
+\begin{itemize}
+  \item Bullet point one in an unordered list
+  \item Bullet point two
+\end{itemize}
+
+\subsection{Job title, Company \texorpdfstring{\hfill}{} Date, Length}
+
+\begin{itemize}
+  \item Bullet point one in an unordered list
+  \item Bullet point two
+\end{itemize}
+
+
+
+\section{Education}
+\subsection{University of City, Faculty of Learning, Country \texorpdfstring{\hfill}{} Date, Length}
+
+\section{Major achievements}
+
+\section{Technical skills}
+
+\section{Other skills and interests}
+
+\end{document}
