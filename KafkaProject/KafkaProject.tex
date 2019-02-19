@@ -16,17 +16,13 @@
 
 \maketitle
 
-Use Java 8
+\section{Tools}
 
-Use Spring Boot to implement a REST API
+May use Java 8
 
-Assume an intranet for the purpose of security
+May use Spring Boot and Swagger to implement a REST API
 
-Hamag Bicro agency, a big project
-
-Construct a minimal UI for testing
-
-Construct the project CRUDL stripe by CRUDL stripe (create, read, update, delete, list)
+Test REST using Postman
 
 Use zkClient to connect to Zookeeper
 
@@ -34,11 +30,21 @@ Use AdminClient to connect to Kafka
 
 Use Kafka version 2.1 or 0.11
 
+\section{CRUDL and architecture}
+
 Consider multiple architectures: microservices, monolith ili client server
+
+Construct CRUDL operations resource by resource (create, read, update, delete, list)
+
+The important Kafka resources are: topics, partitions, messages, consumers, producers, streams
 
 It is impossible to create all CRUDL operations for each resource
 
-The important Kafka resources are: topics, partitions, messages, consumers, producers, streams
+Assume an intranet for the purpose of security
+
+Construct a minimal UI for testing
+
+\section{Implementation}
 
 Wrap each and every Kafka functions in your own function to prevent API changes from effecting the project
 
@@ -48,11 +54,15 @@ Take notes about Kafka resources and API
 
 Always have the bigger picture in mind
 
-Monitoring sems to be a bitmore important then CRUDL operations
+Monitoring seems to be a bit more important then CRUDL operations
 
 Take notes about the different preexisting solutions and libraries
 
 Abstract the configuration
+
+\section{Misc}
+
+Hamag Bicro agency, a big project
 
 
 
