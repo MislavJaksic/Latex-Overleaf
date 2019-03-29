@@ -16,7 +16,7 @@ margin=15mm
 
 \titleformat{\section}
 [block]
-{\large
+{\Large
 \scshape
 \raggedright}
 {}
@@ -44,7 +44,7 @@ margin=15mm
 
 \titleformat{\subsubsection}
 [block]
-{\large
+{
 \raggedright}
 {}
 {0mm}
@@ -62,13 +62,14 @@ colorlinks=true,
 linkcolor=blue,
 filecolor=magenta,      
 urlcolor=blue,
-pdftitle={Name Surname CV},
-pdfpagemode=FullScreen,
+pdftitle={Mislav Jaksic CV},
 }
 
 \urlstyle{same}
 
-%\renewcommand{\hfill}{\texorpdfstring{\hfill}{}}
+\newcommand{\bolditalicpair}
+[2]
+{\textbf{#1} \texorpdfstring{\hfill}{} \textit{#2}}
 
 
 
@@ -80,20 +81,20 @@ pdfpagemode=FullScreen,
 \begin{minipage}{.49\textwidth}
 \raggedright
 
-{\huge Name Surname}
+{\huge Mislav Jakšić}
 
-City, Country
+Zagreb, Croatia
 \end{minipage}
 
 \noindent
 \begin{minipage}{.49\textwidth}
 \raggedleft
 
-\href{mailto:name.surname@email.com}{name.surname@email.com}
+\href{mailto:jaksicmislav@gmail.com}{jaksicmislav@gmail.com}
 
-\href{https://linkedin.com/in/name-surname}{linkedin.com/name-surname}
+\href{https://linkedin.com/in/mislav-jaksic}{linkedin.com/mislav-jaksic}
 
-\href{https://github.com/NameSurname}{github.com/NameSurname}
+\href{https://github.com/MislavJaksic}{github.com/MislavJaksic}
 \end{minipage}
 
 \end{multicols}
@@ -101,30 +102,87 @@ City, Country
 
 
 \section{Work experience}
-\subsection{Job title, Company \texorpdfstring{\hfill}{} Date, Length}
-Lay out what you know.
+\subsection{\bolditalicpair{Big Data Analytics Developer, Inceptum}{4 months}}
 
 \begin{itemize}
-  \item Bullet point one in an unordered list
-  \item Bullet point two
+  \item Enabled raising alarms in real-time when the telecommunication infrastructure experiences an \\
+  error by creating a data pipeline that could analyse 3MB/sec/thread of messages
+  \item Java, Python, Linux, Kafka, Spark, Redis, Hive
 \end{itemize}
 
-\subsection{Job title, Company \texorpdfstring{\hfill}{} Date, Length}
+\subsection{\bolditalicpair{SAP Technical Consultant, Atos}{6 months}}
 
 \begin{itemize}
-  \item Bullet point one in an unordered list
-  \item Bullet point two
+  \item Solved a variety of problems by consulting internal and external clients which increased their \\
+  revenue by 2\% on average
+  \item ABAP, Java, SAP
 \end{itemize}
+
+
+
+\section{Projects}
+\subsection{\bolditalicpair{Tax Report Generator}{Freelance project}}
+
+\begin{itemize}
+  \item Saved the client 100 labour hours per year by developing a tax report generator which \\
+  increased productivity by 6\%
+  \item Python (lxml, Pandas, openpyxl)
+\end{itemize}
+
+\subsection{\bolditalicpair{Real estate valuation system}{Capstone project}}
+
+\begin{itemize}
+  \item Assisted young people in finding affordable housing by constructing a machine learning system \\
+  which analyses the housing market with 90\% accuracy
+  \item Python (Scikit-learn, PyQt, Scrapy), MongoDB
+\end{itemize}
+
+%\subsection{\bolditalicpair{Mutation Finder}{Course project}}
+
+%\begin{itemize}
+%  \item Discovered mutations in the reference genome by 
+%  \item Bullet point two
+%\end{itemize}
 
 
 
 \section{Education}
-\subsection{University of City, Faculty of Learning, Country \texorpdfstring{\hfill}{} Date, Length}
+\subsection{\bolditalicpair{University of Zagreb, Faculty of Electrical Engineering and Computing}{}}
 
-\section{Major achievements}
+\subsubsection{\bolditalicpair{Pursuing MSc in Computer Science}{2019 (expected)}}
+
+\begin{itemize}
+  \item Relevant courses: Machine Learning, Advanced Databases, Parallel Programming, \\
+  Extremal Combinatorics, Blockchain Technologies
+  \item Published course exercises on \href{https://github.com/MislavJaksic/College-Labs}{GitHub}
+\end{itemize}
+
+\subsubsection{\bolditalicpair{BSc in Software Engineering}{2017}}
+
+
 
 \section{Technical skills}
+\subsubsection{\bolditalicpair{Intermediate:}{}}
 
-\section{Other skills and interests}
+\begin{itemize}
+  \item Java, Python - used to construct a variety of projects
+  \item Apache Kafka - used in Inceptum and during a freelance project
+\end{itemize}
+
+\subsubsection{\bolditalicpair{Basic:}{}}
+
+\begin{itemize}
+  \item C++, SQL, JavaScript, HTML5
+  \item Linux, Git, PostgreSQL, Flask
+\end{itemize}
+
+
+
+\section{Achievements, other skills and interests}
+
+\begin{itemize}
+  \item Human languages - Croatian (native); English (C2 in speech and writing)
+  \item Interests - investing
+\end{itemize}
 
 \end{document}
