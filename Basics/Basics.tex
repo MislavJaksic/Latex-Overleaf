@@ -7,7 +7,7 @@
                                            
 \usepackage[utf8]{inputenc} % sets encoding
 
-\usepackage{amsmath} % math package (display mode and compley equations)
+\usepackage{amsmath} % math package (display mode and complex equations)
 \usepackage{hyperref} % hyperlink package
 
 \usepackage{graphicx} % image package
@@ -25,27 +25,36 @@
 
 \begin{document} % start document body
 
-
-
 \maketitle % make the preamble elements appear (title, author and date)
-
-
 
 \tableofcontents % create table of contents based on section, subsection and chapter commands
                  % add other content with \addcontentsline
 
 
 
+\begin{abstract}
+Special abstract formatting. At the beginning of the document.
+\end{abstract}
+
+
+
+\section{Numbered section (1 for example)}
+
 \textbf{Bold}
+
 \underline{Underlined} 
+
 \textit{Italic}
+
 \textbf{\textit{Bold and Italic}}
 
 {\tiny tiny text}
+
 {\LARGE large text}
 
-Double newline to create a new paragraph.
-Double backslash \\\\ or newline command to insert a breakpoint. Not recommended.
+
+
+Double newline will force a newline and a new paragraph. Not recommended.
 
 
 
@@ -61,24 +70,16 @@ Double backslash \\\\ or newline command to insert a breakpoint. Not recommended
 
 
 
-\begin{abstract}
-Special abstract formatting. At the beginning of the paper.
-\end{abstract}
+\addcontentsline{toc}{section}{Unnumbered Section} % add a section called "Unnumbered Section" to ToC (Table of Contents)
+\section*{Unnumbered Section} % * character disables numbering
 
-\section{Numbered section (1.1 for example)}
- 
 Text.
- 
-\section{Another numbered section (1.2 for example)}
+
+\section{Another numbered section (2 for example)}
 
 More text.
  
-\subsection{Numbered subsection (1.2.1 for example)}
-
-Even more text.
-
-\addcontentsline{toc}{section}{Unnumbered Section} % add a section called "Unnumbered Section" to ToC (Table of Contents)
-\section*{Unnumbered Section} % * character disables numbering
+\subsection{Numbered subsection (2.1 for example)}
 
 There are a lot more "section"-like commands.
 
@@ -87,11 +88,12 @@ There are a lot more "section"-like commands.
 \begin{figure}[h] % image construct
     \centering
     %\includegraphics[width=0.8\textwidth]{mozilla_logo} % try to display "images/mozilla_logo"
-    \caption{Text below the picture}
+    \caption{Text below the centered picture}
     \label{fig:mozilla_picture_label}
 \end{figure}
  
 Picture number reference: \ref{fig:mozilla_picture_label}
+
 Picture page reference: \pageref{fig:mozilla_picture_label} 
 
 
@@ -118,11 +120,11 @@ $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$
 \centering
 
 \begin{tabular}{ |l|c|r| } % left, center and right aligned columns; | means separate by a vertical line
-\hline                     % add horitontal line to the top of the table 
+\hline                     % add horizontal line to the top of the table 
 cell1 & cell2 & cell3 \\   % & to break table entry, \\ to go to the next line
 cell4 & cell5 & cell6 \\  
 cell7 & cell8 & cell9 \\
-\hline                     % add horitontal line to the bottom of the table 
+\hline                     % add horizontal line to the bottom of the table 
 \end{tabular}
 
 \caption{Text below table}

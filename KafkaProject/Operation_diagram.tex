@@ -16,10 +16,8 @@ in_arrow/.style={<-, very thick},
 above_edge_text/.style={above, midway, sloped}
 ]
 
-% \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
-%   edge[<->, bend left/right] node[auto, swap]{edge_text}(out_name_of_node)
-% OR
-% \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
+
+
 \node[square](worker_config) at (0,0) {Worker config file};
 \node[rounded_square](connect) at (4,0) {Kafka Connect uber JAR};
 \node[square](connector_config) at (8,0) {Connector config file};
@@ -28,11 +26,8 @@ above_edge_text/.style={above, midway, sloped}
 
 \node[rounded_square](kafka_broker) at (4,-4) {Kafka broker};
 
-% \draw[->](name_of_node.direction) -- (name_of_node.direction)
-% OR
-% \draw[->](name_of_node.direction) to [bend right] node[]{edge_text} (name_of_node.direction)
-% OR
-% \draw[->](name_of_node.direction) .. controls +(up/down/right/left:10mm) and +(up/down/right/left:10mm) .. (name_of_node.direction);
+
+
 \draw[out_arrow](worker_config) to [] node[auto,swap]{} (standalone);
 \draw[out_arrow](connect) to [] node[auto,swap]{} (standalone);
 \draw[out_arrow](connector_config) to [] node[auto,swap]{} (standalone);

@@ -21,10 +21,8 @@ in_arrow/.style={<-, very thick},
 above_edge_text/.style={above, midway, sloped}
 ]
 
-% \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
-%   edge[<->, bend left/right] node[auto, swap]{edge_text}(out_name_of_node)
-% OR
-% \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
+
+
 \node[rounded_square](zoo_1) at (4,0) {Zookeeper/Kafka cluster};
 \node[rounded_square](zoo_2) at (12,0) {Zookeeper/Kafka cluster};
 
@@ -47,11 +45,8 @@ above_edge_text/.style={above, midway, sloped}
 
 \node[rounded_square](kafka) at (6,-10) {Metrics Kafka Broker};
 
-% \draw[->](name_of_node.direction) -- (name_of_node.direction)
-% OR
-% \draw[->](name_of_node.direction) to [bend right] node[]{edge_text} (name_of_node.direction)
-% OR
-% \draw[->](name_of_node.direction) .. controls +(up/down/right/left:10mm) and +(up/down/right/left:10mm) .. (name_of_node.direction);
+
+
 \draw[out_arrow](zoo_1) to [] node[auto,swap]{} (broker_1);
 \draw[out_arrow](zoo_1) to [] node[auto,swap]{} (broker_2);
 \draw[out_arrow](zoo_2) to [] node[auto,swap]{} (broker_a);
