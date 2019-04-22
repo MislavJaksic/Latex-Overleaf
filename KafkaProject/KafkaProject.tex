@@ -24,7 +24,7 @@ May use Spring Boot and Swagger to implement a REST API
 
 Test REST using Postman
 
-Use zkClient to connect to Zookeeper
+Use zkClient or Apache's Zookeeper to connect to Zookeeper
 
 Use AdminClient to connect to Kafka
 
@@ -63,5 +63,19 @@ Abstract the configuration
 \section{Misc}
 
 Hamag Bicro agency, a big project
+
+\section{Design considerations}
+
+Package names are singular.
+
+Centralize error processing.
+
+Don't return null. Return benign neutral values.
+
+Avoid dependency conflicts is more important then using your favourite JSON library.
+
+Codify external system behaviours.
+
+Write comments only if you cannot write anything else.
 
 \end{document}
