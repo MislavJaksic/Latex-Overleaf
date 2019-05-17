@@ -17,10 +17,6 @@ in_arrow/.style={<-, very thick},
 above_edge_text/.style={above, midway, sloped}
 ]
 
-% \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
-%   edge[<->, bend left/right] node[auto, swap]{edge_text}(out_name_of_node)
-% OR
-% \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
 \node[long_square](users) at (0,0) {Program/Human};
 
 \node[rounded_square](REST_interface) at (0,-2) {REST interface};
@@ -33,11 +29,8 @@ above_edge_text/.style={above, midway, sloped}
 \node[rounded_square](kafka) at (2,-6) {Kafka};
 \node[rounded_square](zookeeper) at (6,-6) {Zookeeper};
 
-% \draw[->](name_of_node.direction) -- (name_of_node.direction)
-% OR
-% \draw[->](name_of_node.direction) to [bend right] node[]{edge_text} (name_of_node.direction)
-% OR
-% \draw[->](name_of_node.direction) .. controls +(up/down/right/left:10mm) and +(up/down/right/left:10mm) .. (name_of_node.direction);
+
+
 \draw[out_arrow](users) to [bend right] node[auto,swap]{HTTP} (REST_interface);
 \draw[out_arrow](REST_interface) to [bend right] node[auto,swap]{JSON} (users);
 

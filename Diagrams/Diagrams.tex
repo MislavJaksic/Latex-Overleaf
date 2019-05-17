@@ -2,15 +2,17 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{tikz}
-\usetikzlibrary{positioning}
+\usetikzlibrary{positioning, fit}
 
 \begin{document}
 
 \begin{tikzpicture}[ % has a lot of options; consult the pgf manual
 bend angle=45,
-square/.style={rectangle, draw=black, fill=white, very thick, inner sep=3pt, minimum width=28mm},
-rounded_square/.style={rectangle, rounded corners, draw=black, fill=white, very thick, inner sep=3pt, minimum width=28mm},
-circle/.style={rectangle, rounded corners=2mm, draw=black, fill=white, very thick, minimum size=4mm},
+long_square/.style={rectangle, draw=black, fill=white, very thick, inner sep=3pt, minimum width=14mm},
+rounded_square/.style={rectangle, rounded corners, draw=black, fill=white, very thick, inner sep=3pt, minimum width=14mm},
+empty_circle/.style={rectangle, rounded corners=2mm, draw=black, fill=white, very thick, minimum size=4mm},
+point/.style={circle, inner sep=0mm},
+fit_square/.style={rectangle, rounded corners=2mm, draw=black, very thick, minimum height=20mm},
 both_arrow/.style={<->, very thick},
 out_arrow/.style={->, very thick},
 in_arrow/.style={<-, very thick},
@@ -21,7 +23,8 @@ above_edge_text/.style={above, midway, sloped}
 %   edge[<->, bend left/right] node[auto, swap]{edge_text}(out_name_of_node)
 % OR
 % \node[type](name_of_node)[above/below/right/left/...=of name_of_node]{node_text}
-\node[square](users) at (0,0) {Program/Human};
+
+\node[long_square](users) at (0,0) {Program/Human};
 
 \node[rounded_square](REST_interface) at (0,-2) {REST interface};
 \node[rounded_square](future_resolver) at (8,-2) {Future resolver};
@@ -33,11 +36,17 @@ above_edge_text/.style={above, midway, sloped}
 \node[rounded_square](kafka) at (2,-6) {Kafka};
 \node[rounded_square](zookeeper) at (6,-6) {Zookeeper};
 
+
+
+\node [fit_square, fit=(kafka) (zookeeper)] (cluster) {};
+\node [anchor=north west] at (cluster.north west) {Cluster};
+
 % \draw[->](name_of_node.direction) -- (name_of_node.direction)
 % OR
 % \draw[->](name_of_node.direction) to [bend right] node[]{edge_text} (name_of_node.direction)
 % OR
 % \draw[->](name_of_node.direction) .. controls +(up/down/right/left:10mm) and +(up/down/right/left:10mm) .. (name_of_node.direction);
+
 \draw[out_arrow](users) to [bend right] node[auto,swap]{HTTP} (REST_interface);
 \draw[out_arrow](REST_interface) to [bend right] node[auto,swap]{JSON} (users);
 
