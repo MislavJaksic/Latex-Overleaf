@@ -15,6 +15,8 @@
 
 \usepackage{float} % "place table exactly here" package
 
+\usepackage[export]{adjustbox} % enables precise size adjustments
+
 
 
 \title{First document}
@@ -87,7 +89,7 @@ There are a lot more "section"-like commands.
 
 \begin{figure}[h] % image construct
     \centering
-    %\includegraphics[width=0.8\textwidth]{mozilla_logo} % try to display "images/mozilla_logo"
+    %\includegraphics[max width=0.8\textwidth, max height=0.6\textwidth]{mozilla_logo} % try to display "images/mozilla_logo"
     \caption{Text below the centered picture}
     \label{fig:mozilla_picture_label}
 \end{figure}

@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{backcolour}{rgb}{0.90,0.90,0.90}
+
+\begin{document}
+
+\begin{lstlisting}[language=Java, caption={Your text here!}, captionpos=b, basicstyle=\footnotesize, numbers=left, stepnumber=1, backgroundcolor=\color{backcolour}, keywordstyle=\color{blue}]
+public List<String> getNodeChildren(String node_path) {
+ List<String> node_children = NeutralValues.LIST;
+ 
+ boolean is_watched = false;
+ try {
+  node_children = this.zookeeper.getChildren(node_path,is_watched);
+ } catch (KeeperException | InterruptedException e) {
+  e.printStackTrace();
+ }
+
+ return node_children;
+}
+\end{lstlisting}
+
+\end{document}
