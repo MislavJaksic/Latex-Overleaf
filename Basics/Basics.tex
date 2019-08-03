@@ -6,6 +6,7 @@
 \documentclass[12pt, a4paper]{article} % declare a type of document (article, book, report, ...)
                                            
 \usepackage[utf8]{inputenc} % sets encoding
+\usepackage[T1]{fontenc} % for "đ" and other unicode
 
 \usepackage{amsmath} % math package (display mode and complex equations)
 \usepackage{hyperref} % hyperlink package
@@ -16,6 +17,22 @@
 \usepackage{float} % "place table exactly here" package
 
 \usepackage[export]{adjustbox} % enables precise size adjustments
+
+\usepackage{formular} % create blank lines
+\newFRMfield{pagefield}{120mm}
+\newFRMfield{longfield}{30mm}
+
+\usepackage{indentfirst} % indenting the first paragraph
+\setlength{\parindent}{0mm} % indent paragraph
+\setlength{\parskip}{2mm} % spacing between paragraphs
+
+\usepackage{setspace}
+\onehalfspacing % one and a half spacing in paragraphs
+
+\usepackage{expl3} % for repating commands
+\ExplSyntaxOn
+\cs_new_eq:NN \Repeat \prg_replicate:nn
+\ExplSyntaxOff
 
 
 
@@ -87,6 +104,8 @@ There are a lot more "section"-like commands.
 
 
 
+\setlength{\tabcolsep}{20pt} % more space between columns
+\renewcommand{\arraystretch}{1.5} % more space between rows
 \begin{figure}[H] % image construct
     \centering
     %\includegraphics[max width=0.8\textwidth, max height=0.6\textwidth]{mozilla_logo} % try to display "images/mozilla_logo"
