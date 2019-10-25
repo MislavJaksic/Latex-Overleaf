@@ -1,18 +1,42 @@
 \documentclass[usenames,dvipsnames]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% \definecolor{custom_colour}{RGB}{65, 167, 241} % custom colour
 
 \mode<presentation> {
 \usetheme{Madrid} % there are a lot of different themes
-%\usecolortheme{albatross} % there are a lot of different colour themes
+% \usecolortheme{seahorse} % there are a lot of different colour themes
+% \usecolortheme[named=custom_colour]{structure} % custom colour
 
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+% \setbeamertemplate{footline} % Custom footline
+% {
+%   \leavevmode%
+%   \hbox{%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%     \usebeamerfont{author in head/foot}\insertshortauthor\hspace*{1ex}(\insertshortinstitute)
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshorttitle
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%     \insertpagenumber{} / \inserttotalframenumber\hspace*{2ex}
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+% }
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+% \setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 
 \usepackage{graphicx}
 
 \usepackage{booktabs}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, fit, shapes}
 
 \title[Short title]{Main Topic } % The short title appears at the bottom of every slide, the full title is only on the title page
 
@@ -51,6 +75,28 @@ University of California \\
 \begin{frame}
 \frametitle{Paragraphs of Text}
 Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.
+\end{frame}
+
+\begin{frame}
+\frametitle{Multislide}
+Line 1
+\pause
+
+Line 2
+\pause
+\end{frame}
+
+\begin{frame}
+\frametitle{Node multislide}
+\onslide<+->{
+\begin{tikzpicture}
+\node<1>[rectangle](node_1) at (0,0) {Show only on the first slide};
+\node[rectangle](node_2) at (0,-1) {Show on all slides};
+\onslide<+->{
+\node[rectangle](node_3) at (0,-2) {Node 3};
+}
+\end{tikzpicture}
+}
 \end{frame}
 
 
