@@ -8,10 +8,7 @@
 
 * Overleaf: a free online Latex compiler
 
-## [Overleaf documentation](https://www.overleaf.com/learn/latex/Main_Page)
+Take a look at the myriad examples from how to list portions of software code to how to make a presentation document.  
 
-Overleaf has a rich documentation and a lot of tutorials.  
-
-## [Overleaf templates](https://www.overleaf.com/latex/templates)
-
-There are a lot of templates on Overleaf, from IEEE conference paper to fancy CVs and beyond.  
+[Overleaf documentation](https://www.overleaf.com/learn/latex/Main_Page)  
+[Overleaf examples](https://www.overleaf.com/latex/templates)  
