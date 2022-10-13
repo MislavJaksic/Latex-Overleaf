@@ -2,9 +2,71 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{tikz}
-\usetikzlibrary{positioning, fit, shapes}
+\usetikzlibrary{shapes,positioning, arrows.meta, fit, math}
+
+\tikzmath{
+\nodeminw = 3;
+\nodeminh = 2; 
+\nodetextw = 3;
+}
+
+\tikzset{
+process/.style={draw,
+        minimum width=\nodeminw cm,minimum height=\nodeminh cm,align=center,text width=\nodetextw cm,fill=blue!20},
+terminal/.style={draw,
+    rounded rectangle, 
+    minimum width=\nodeminw cm,minimum height=\nodeminh cm,align=center,text width=\nodetextw cm,fill=orange!20},
+decision/.style={diamond,draw,aspect=1.95,minimum width=\nodeminw cm,minimum height=\nodeminh cm,align=center,text width=\nodetextw cm,fill=green!20},
+io/.style={draw,
+    trapezium,
+    trapezium left angle = 65,
+    trapezium right angle = 115,
+    trapezium stretches,minimum width=\nodeminw cm,minimum height=\nodeminh cm,align=center,text width=\nodetextw cm},
+point/.style={circle, inner sep=0mm},
+}
 
 \begin{document}
+
+\begin{tikzpicture}[x=4cm,y=2cm]
+
+\foreach \i in {2,4,6} {
+    \draw (-.75,\i) rectangle (5.75,\i+2);
+    \draw (-.75,\i) rectangle (-.5,\i+2);
+}
+\node[rotate=90,font=\sffamily] at (-.625,7) {Court};
+\node[rotate=90,font=\sffamily] at (-.625,5) {FINA};
+\node[rotate=90,font=\sffamily] at (-.625,3) {Bidders};
+
+\node[terminal] (request) at (0,7) {Make request\\for sale}; \node[terminal] (suspend) at (2.5,7) {Suspend\\enforcement}; \node[terminal] (adjudication) at (5,7) {Adjudicate decision};
+\node[process] (call) at (0,5) {Publish call for participation}; \node[decision] (no_bidders) at (1,5) {No bidders?};  \node[decision] (is_second) at (2.5,5) {Is second auction?}; \node[process] (second_auction) at (4,5) {Start second\\auction}; \node[process] (report) at (5,5) {Send auction\\report};
+\node[process] (deposit) at (0,3) {Submit security\\deposit}; \node[process] (bid) at (1,3) {Submit bids};
+
+\node[point] (help1) at (1,5.75) {};
+\node[point] (help2) at (4.55,5.75) {};
+
+\node[point] (help3) at (4,4.25) {};
+\node[point] (help4) at (0.45,4.25) {};
+
+
+\begin{scope}[every path/.style={-latex}]
+\draw (request) edge (call)
+(call) edge node[midway,fill=white,inner sep=2pt] {After at least 60 days} (deposit)
+    (deposit) edge (bid)
+(bid) edge node[midway,fill=white,inner sep=2pt] {After 10 days} (no_bidders)
+(no_bidders) edge node[midway,fill=white,inner sep=2pt] {Yes} (is_second)
+(no_bidders) -- (help1)
+(help1) -- node[midway,fill=white,inner sep=2pt] {No} (help2)
+(help2) edge (report)
+(is_second) edge node[midway,fill=white,inner sep=2pt] {Yes} (suspend)
+(is_second) edge node[midway,fill=white,inner sep=2pt] {No} (second_auction)
+(report) edge (adjudication)
+(second_auction) -- (help3)
+(help3) -- node[midway,fill=white,inner sep=2pt] {After 1 day} (help4)
+(help4) --  (call)
+;
+\end{scope}
+
+\end{tikzpicture}
 
 \begin{tikzpicture}[ % has a lot of options; consult the pgf manual
 bend angle=45,
